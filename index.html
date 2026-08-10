@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>To-Do List with Priority Levels</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <h1>Sticky Note Desk</h1>
+      <p class="subtitle">To-Do List with Priority Levels</p>
+    </header>
+
+    <section class="controls">
+      <form id="task-form" class="task-form">
+        <input id="task-input" type="text" placeholder="Add a new task..." required>
+        <select id="priority-select" aria-label="Priority">
+          <option value="Low">Low</option>
+          <option value="Medium" selected>Medium</option>
+          <option value="High">High</option>
+        </select>
+        <input id="due-date" type="date" aria-label="Due date">
+        <button type="submit" class="add-btn">Add</button>
+      </form>
+
+      <div class="sort-controls">
+        <label for="sort-select">Sort:</label>
+        <select id="sort-select">
+          <option value="priority">Priority</option>
+          <option value="due">Due Date</option>
+        </select>
+      </div>
+    </section>
+
+    <section id="task-list" class="task-list" aria-live="polite"></section>
+    <footer class="footer-note">Tasks saved locally in your browser.</footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
