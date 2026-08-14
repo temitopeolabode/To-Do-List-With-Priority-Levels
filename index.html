@@ -17,10 +17,15 @@
     <section class="controls">
       <form id="task-form" class="task-form">
         <input id="task-input" type="text" placeholder="Add a new task..." required>
+        <textarea id="task-details" rows="2" placeholder="Task details (optional)"></textarea>
         <select id="priority-select" aria-label="Priority">
           <option value="Low">Low</option>
           <option value="Medium" selected>Medium</option>
           <option value="High">High</option>
+        </select>
+        <select id="status-select" aria-label="Task stage">
+          <option value="just-started" selected>Just Started</option>
+          <option value="ongoing">Ongoing</option>
         </select>
         <input id="due-date" type="date" aria-label="Due date">
         <button type="submit" class="add-btn">Add</button>
@@ -35,7 +40,29 @@
       </div>
     </section>
 
-    <section id="task-list" class="task-list" aria-live="polite"></section>
+    <section class="board" aria-live="polite">
+      <div class="stage" data-status="just-started">
+        <div class="stage-header">
+          <h2>Just Started</h2>
+        </div>
+        <div id="just-started-list" class="task-list"></div>
+      </div>
+
+      <div class="stage" data-status="ongoing">
+        <div class="stage-header">
+          <h2>Ongoing</h2>
+        </div>
+        <div id="ongoing-list" class="task-list"></div>
+      </div>
+
+      <div class="stage" data-status="completed">
+        <div class="stage-header">
+          <h2>Completed</h2>
+        </div>
+        <div id="completed-list" class="task-list"></div>
+      </div>
+    </section>
+
     <footer class="footer-note">Tasks saved locally in your browser.</footer>
   </main>
 
